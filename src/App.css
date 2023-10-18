@@ -4,3 +4,6 @@
 /* div {
   border: 1px solid;
 } */
+table {
+  width: inherit;
+}

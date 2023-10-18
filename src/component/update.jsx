@@ -18,11 +18,12 @@ const Update = ({ usr, show }) => {
         location.reload()
 
     }
-    return (<>
+    return (<div className='flex justify-center items-center'>
         <div
-            className=" w-3/6
-             top-11 left-56 absolute bg-slate-500 z-10 opacity-80 flex justify-center 
-            items-center flex-col text-white  rounded-xl pb-5">
+            className=" w-80
+             absolute bg-slate-500 z-10 opacity-80 flex justify-center 
+            items-center flex-col text-white  rounded-xl pb-5 
+             ">
             <h1 className="text-3xl mb-3">update the user</h1>
             <form
                 className="bg-white p-5 rounded-lg w-10/12 relative"
@@ -110,7 +111,7 @@ const Update = ({ usr, show }) => {
 
         </div>
 
-    </>);
+    </div>);
 }
 Update.propTypes = {
     usr: PropTypes.object,

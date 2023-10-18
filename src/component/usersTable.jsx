@@ -30,9 +30,9 @@ const UserTable = () => {
                     </Link>
                 </div>
             </div>
-            <div>
+            <div className="w-full overflow-auto">
                 {err && <div className="text-center mb-2 text-red-600">{err}</div>}
-                <table className="min-w-full">
+                <table >
                     <TableHead />
                     <tbody>
                         {users && users.map((e, i) => {

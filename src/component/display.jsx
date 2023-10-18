@@ -1,6 +1,7 @@
 import UserTable from "./usersTable";
 
 const Display = () => {
+
     return (<><UserTable /></>);
 }
 
