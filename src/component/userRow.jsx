@@ -17,6 +17,9 @@ const UserRow = ({ usr, id, show, hide }) => {
                 <p>{usr.email}</p>
             </td>
             <td className="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                <span>{usr.age}</span>
+            </td>
+            <td className="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                 <span>{usr.createdAt.split('T')[0]}</span>
             </td>
             <td className="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">

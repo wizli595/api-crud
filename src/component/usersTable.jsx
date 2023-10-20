@@ -5,15 +5,19 @@ import UserRow from "./userRow";
 import { useState } from "react";
 import Update from "./update";
 import svg from '../assets/reload.svg';
+import Search from "./search";
 
 const UserTable = () => {
+
     const [show, setShow] = useState({
         display: false,
         data: ""
     })
     const [hideId, setHideid] = useState([])
+    const [result, setResult] = useState("")
     const { loading, users, err } = useFetch("")
-
+    let data = users
+    if (result) data = result
     return (<>
         {loading && <div className="text-center mt-10">loading...</div>}
         <div className="container relative max-w-7xl w-9/12 m-auto mt-8">
@@ -30,18 +34,22 @@ const UserTable = () => {
                     </Link>
                 </div>
             </div>
+            <div className="ml-5 mb-3 ">
+                <Search handler={setResult} />
+            </div>
             <div className="w-full overflow-auto">
                 {err && <div className="text-center mb-2 text-red-600">{err}</div>}
                 <table >
                     <TableHead />
                     <tbody>
-                        {users && users.map((e, i) => {
+                        {data && data.map((e, i) => {
                             if (e._id !== hideId[i]) return <UserRow key={e._id} usr={e} id={i + 1} show={setShow} hide={setHideid} />
                         })}
                     </tbody>
                 </table>
             </div>
             {show.display && <Update usr={show.data} show={setShow} />}
+
         </div>
     </>);
 }
